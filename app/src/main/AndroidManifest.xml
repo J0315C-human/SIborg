@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="joelschuman.siborg" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainScreen1"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ForumActivity"
+            android:label="@string/title_activity_forum"
+            android:parentActivityName=".MainScreen1" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="joelschuman.siborg.MainScreen1" />
+        </activity>
+        <activity
+            android:name=".ResourcesActivity"
+            android:label="@string/title_activity_resources"
+            android:parentActivityName=".MainScreen1" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="joelschuman.siborg.MainScreen1" />
+        </activity>
+        <activity
+            android:name=".TodoActivity"
+            android:label="@string/title_activity_todo"
+            android:parentActivityName=".MainScreen1" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="joelschuman.siborg.MainScreen1" />
+        </activity>
+    </application>
+
+</manifest>
