@@ -23,14 +23,16 @@
         android:ems="10"
         android:id="@+id/enter_name"
         android:layout_gravity="center_horizontal"
+        android:onClick="onClickEnterName"
         />
 
-    <RadioButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Include Name"
-        android:id="@+id/Choose_Something"
-        android:layout_gravity="left" />
+        android:text="@string/CreatePDFButton"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:onClick="CreatePDF"/>
 
 
 </LinearLayout>

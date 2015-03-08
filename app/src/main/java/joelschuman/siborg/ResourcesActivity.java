@@ -7,10 +7,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+
+import junit.framework.Assert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +22,8 @@ import java.io.FileOutputStream;
 
 public class ResourcesActivity extends ActionBarActivity {
     /* Checks if external storage is available for read and write */
+    public String str_Name = "enter your name";
+
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -56,7 +61,17 @@ public class ResourcesActivity extends ActionBarActivity {
         }
         return Fout;
     }
-    public void TestPDF(View v) {
+
+
+    public void onClickEnterName(View arg0) {
+        Assert.assertNotNull(arg0);
+        // Get string entered
+        TextView newName = (TextView) findViewById(R.id.enter_name);
+        // Add string to underlying data structure
+        str_Name = newName.getText().toString();
+    }
+
+    public void CreatePDF(View v) {
         if (isExternalStorageReadable() && isExternalStorageWritable()) {
             //File newPDFfile = getDocStorageDir("TEST_PDF");
             Document doc = new Document();
@@ -64,11 +79,14 @@ public class ResourcesActivity extends ActionBarActivity {
                 PdfWriter.getInstance(doc, getDocStorageDir("TestPDF"));
                 doc.open();
                 Paragraph par1 = new Paragraph();
-                par1.add("something IS HERE");
+                par1.add("ATTENDANCE SHEET");
                 Paragraph par2 = new Paragraph();
-                par2.add("SECOND PARAGRAPH");
+                par2.add("Name: " + str_Name);
+                Paragraph par3 = new Paragraph();
+                par3.add("_________________\n_________________\n_________________\n_________________\n");
                 doc.add(par1);
                 doc.add(par2);
+                doc.add(par3);
                 doc.close();
 
             } catch (Exception e) {

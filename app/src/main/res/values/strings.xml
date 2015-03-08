@@ -10,5 +10,6 @@
     <string name="B2">FORUM</string>
     <string name="B3">RESOURCES</string>
     <string name="enter_name">Enter your name</string>
+    <string name="CreatePDFButton">Create PDF</string>
 
 </resources>
