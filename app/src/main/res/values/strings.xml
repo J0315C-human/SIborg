@@ -2,10 +2,13 @@
 <resources>
 
     <string name="app_name">SIborg</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_forum">ForumActivity</string>
     <string name="title_activity_resources">ResourcesActivity</string>
     <string name="title_activity_todo">TodoActivity</string>
+    <string name="B1">TO DO</string>
+    <string name="B2">FORUM</string>
+    <string name="B3">RESOURCES</string>
+    <string name="enter_name">Enter your name</string>
 
 </resources>

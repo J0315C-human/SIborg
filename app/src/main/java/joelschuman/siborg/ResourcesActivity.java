@@ -1,12 +1,82 @@
 package joelschuman.siborg;
 
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 
 public class ResourcesActivity extends ActionBarActivity {
+    /* Checks if external storage is available for read and write */
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    //create output stream
+    public FileOutputStream getDocStorageDir(String DocName) {
+        // Get the directory for the user's public documents, if that doesn't work, try Downloads
+
+        File nfile = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOWNLOADS), DocName);
+
+        //Try opening directory and creating new output stream
+
+        nfile.mkdirs();
+
+        FileOutputStream Fout = null;
+        try {
+            Fout = new FileOutputStream(nfile + "/DocName.pdf");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return Fout;
+    }
+    public void TestPDF(View v) {
+        if (isExternalStorageReadable() && isExternalStorageWritable()) {
+            //File newPDFfile = getDocStorageDir("TEST_PDF");
+            Document doc = new Document();
+            try {
+                PdfWriter.getInstance(doc, getDocStorageDir("TestPDF"));
+                doc.open();
+                Paragraph par1 = new Paragraph();
+                par1.add("something IS HERE");
+                Paragraph par2 = new Paragraph();
+                par2.add("SECOND PARAGRAPH");
+                doc.add(par1);
+                doc.add(par2);
+                doc.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else Log.e("Errors", "External Storage Not Read/Writeable");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

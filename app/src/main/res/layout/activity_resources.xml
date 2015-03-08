@@ -10,9 +10,27 @@
     android:background="#ff6b8092">
 
     <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Attendance Sheet Generator"
+        android:textSize="40sp"/>
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:inputType="textPersonName"
+        android:text="@string/enter_name"
+        android:ems="10"
+        android:id="@+id/enter_name"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="THIS WOULD BE THE RESOURCES PAGE"
-        android:textSize="40sp"/>
+        android:text="Include Name"
+        android:id="@+id/Choose_Something"
+        android:layout_gravity="left" />
+
 
 </LinearLayout>

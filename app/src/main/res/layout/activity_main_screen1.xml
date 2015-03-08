@@ -16,15 +16,16 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/temp_logo"></ImageView>
+            android:src="@drawable/temp_logo"/>
 
         <Button
             android:id="@+id/todo_button"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="5dp"
-            android:text="TO DO"
-            android:onClick="buttonPush"/>
+            android:text="@string/B1"
+            android:onClick="buttonPush"
+            android:focusableInTouchMode="false" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -37,15 +38,17 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="5dp"
-            android:text="FORUM"
+            android:text="@string/B2"
             android:onClick="buttonPush"/>
         <Button
             android:id="@+id/resources_button"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="5dp"
-            android:text="RESOURCES"
+            android:text="@string/B3"
             android:onClick="buttonPush"/>
+
     </LinearLayout>
+
 </LinearLayout>
 
