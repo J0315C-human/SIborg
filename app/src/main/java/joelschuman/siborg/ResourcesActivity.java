@@ -85,6 +85,7 @@ public class ResourcesActivity extends ActionBarActivity {
                 Paragraph par3 = new Paragraph();
                 par3.add("_________________\n_________________\n_________________\n_________________\n");
                 doc.add(par1);
+
                 doc.add(par2);
                 doc.add(par3);
                 doc.close();
@@ -93,7 +94,7 @@ public class ResourcesActivity extends ActionBarActivity {
                 e.printStackTrace();
             }
         }
-        else Log.e("Errors", "External Storage Not Read/Writeable");
+        else Log.wtf("Errors", "External Storage Not Read/Writeable");
     }
 
     @Override

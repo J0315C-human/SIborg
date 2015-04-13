@@ -4,14 +4,40 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import junit.framework.Assert;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class TodoActivity extends ActionBarActivity {
+
+    private ListView todoListView;
+    private ArrayAdapter<String> listAdapter;
+    private String tempNewTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo);
+
+        ArrayList<String> tasksList = new ArrayList<String>();
+        todoListView = (ListView) findViewById( R.id.todoListView );
+
+        String[] tasks = new String[] { "Lesson Plan", "Attendance", "Timesheet"};
+
+
+        tasksList.addAll( Arrays.asList(tasks));
+
+        listAdapter = new ArrayAdapter<String>(this, R.layout.todo_row, tasksList);
+
+        todoListView.setAdapter(listAdapter);
     }
 
 
@@ -35,5 +61,29 @@ public class TodoActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickEnterTask(View arg0) {
+        Assert.assertNotNull(arg0);
+        // Get string entered
+        TextView newTask = (TextView) findViewById(R.id.enter_name);
+        // Add string to underlying data structure
+        tempNewTask = newTask.getText().toString();
+    }
+
+
+    public void onClickAddNewTask(View v){
+
+        //Make sure the new task has text
+        Assert.assertNotNull(tempNewTask);
+
+        listAdapter.add(tempNewTask);
+
+    }
+
+    public void onClickRemoveLast(View v){
+
+        Assert.assertFalse(listAdapter.isEmpty());
+        listAdapter.remove(tempNewTask);
     }
 }

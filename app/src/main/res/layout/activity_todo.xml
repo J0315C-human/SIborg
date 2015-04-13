@@ -9,9 +9,44 @@
     android:gravity="center_vertical"
     android:background="#ff6b8092">
 
-    <TextView
+
+    <ListView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/todoListView">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_task"
+            android:id="@+id/newTask"
+            android:layout_gravity="center"
+            android:onClick="onClickAddNewTask"/>
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@string/enter_task"
+            android:ems="10"
+            android:id="@+id/enter_name"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickEnterTask"
+            />
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="THIS WOULD BE THE TODO LIST PAGE"
-        android:textSize="40sp"/>
+        android:text="@string/remove_task"
+        android:id="@+id/removeTask"
+        android:layout_gravity="center"
+        android:onClick="onClickRemoveLast"
+        android:textColor="#ffff212c"/>
+
 </LinearLayout>

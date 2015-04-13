@@ -11,5 +11,6 @@
     <string name="B3">RESOURCES</string>
     <string name="enter_name">Enter your name</string>
     <string name="CreatePDFButton">Create PDF</string>
-
+    <string name="enter_task">new task</string>
+    <string name="remove_task">Undo</string>
 </resources>
