@@ -34,18 +34,11 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/forum_button"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:padding="5dp"
-            android:text="@string/B2"
-            android:onClick="buttonPush"/>
-        <Button
             android:id="@+id/resources_button"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:padding="5dp"
-            android:text="@string/B3"
+            android:text="@string/B2"
             android:onClick="buttonPush"/>
 
     </LinearLayout>

@@ -7,8 +7,7 @@
     <string name="title_activity_resources">ResourcesActivity</string>
     <string name="title_activity_todo">TodoActivity</string>
     <string name="B1">TO DO</string>
-    <string name="B2">FORUM</string>
-    <string name="B3">RESOURCES</string>
+    <string name="B2">MAKE PDF</string>
     <string name="enter_name">Enter your name</string>
     <string name="CreatePDFButton">Create PDF</string>
     <string name="enter_task">new task</string>

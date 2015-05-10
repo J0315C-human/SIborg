@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 public class MainScreen1 extends ActionBarActivity {
 
 
@@ -29,9 +28,6 @@ public class MainScreen1 extends ActionBarActivity {
     public void buttonPush(View v) {
         Intent intent = null;
         switch (v.getId()) {
-            case R.id.forum_button:
-                intent = new Intent(this, ForumActivity.class);
-                break;
             case R.id.resources_button:
                 intent = new Intent(this, ResourcesActivity.class);
                 break;

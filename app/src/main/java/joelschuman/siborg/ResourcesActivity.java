@@ -18,6 +18,8 @@ import junit.framework.Assert;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.Calendar;
+
 
 
 public class ResourcesActivity extends ActionBarActivity {
@@ -53,13 +55,13 @@ public class ResourcesActivity extends ActionBarActivity {
 
         nfile.mkdirs();
 
-        FileOutputStream Fout = null;
+        FileOutputStream OutputFile = null;
         try {
-            Fout = new FileOutputStream(nfile + "/DocName.pdf");
+            OutputFile = new FileOutputStream(nfile + "/DocName.pdf");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        return Fout;
+        return OutputFile;
     }
 
 
@@ -83,7 +85,12 @@ public class ResourcesActivity extends ActionBarActivity {
                 Paragraph par2 = new Paragraph();
                 par2.add("Name: " + str_Name);
                 Paragraph par3 = new Paragraph();
+                String strdate = String.valueOf(Calendar.MONTH) + "/" +String.valueOf(Calendar.DAY_OF_MONTH) + "/" +String.valueOf(Calendar.YEAR);
+                strdate += "\nCurrent Time: " + String.valueOf(Calendar.HOUR_OF_DAY) + ":" + String.valueOf(Calendar.MINUTE);
+                par3.add("\nToday's Date is: " + strdate);
+
                 par3.add("_________________\n_________________\n_________________\n_________________\n");
+
                 doc.add(par1);
 
                 doc.add(par2);

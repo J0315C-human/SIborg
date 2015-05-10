@@ -18,14 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ForumActivity"
-            android:label="@string/title_activity_forum"
-            android:parentActivityName=".MainScreen1" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="joelschuman.siborg.MainScreen1" />
-        </activity>
-        <activity
             android:name=".ResourcesActivity"
             android:label="@string/title_activity_resources"
             android:parentActivityName=".MainScreen1" >

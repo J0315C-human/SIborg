@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,7 +19,7 @@ public class TodoActivity extends ActionBarActivity {
 
     private ListView todoListView;
     private ArrayAdapter<String> listAdapter;
-    private String tempNewTask;
+    private String tempNewTask = "Type Something!";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
