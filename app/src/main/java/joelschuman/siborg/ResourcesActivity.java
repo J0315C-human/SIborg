@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 public class ResourcesActivity extends ActionBarActivity {
     /* Checks if external storage is available for read and write */
-    public String str_Name = "enter your name";
+    public String str_Name = "Enter your name";
 
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -78,7 +78,7 @@ public class ResourcesActivity extends ActionBarActivity {
             //File newPDFfile = getDocStorageDir("TEST_PDF");
             Document doc = new Document();
             try {
-                PdfWriter.getInstance(doc, getDocStorageDir("TestPDF"));
+                PdfWriter.getInstance(doc, getDocStorageDir("testPDF"));
                 doc.open();
                 Paragraph par1 = new Paragraph();
                 par1.add("ATTENDANCE SHEET");

@@ -12,4 +12,5 @@
     <string name="CreatePDFButton">Create PDF</string>
     <string name="enter_task">new task</string>
     <string name="remove_task">Undo</string>
+
 </resources>
